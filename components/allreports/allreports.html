@@ -1,0 +1,46 @@
+<div class="all-reports-container">
+	<div class="dark-overlay">
+
+		<!-- CLOSE BUTTON -->
+		<div layout="row" layout-align="end center">
+			<div flex="10" ng-click="goToPreviousPage()" class="all-reports-close">X</div>
+		</div>
+
+		<!-- TITLE -->
+		<div layout="row">
+			<div flex flex-offset="10" class="all-reports-title">All Reports</div>
+		</div>
+
+		<!-- CAROUSEL -->
+		<div layout="row" layout-align="center center">
+			<div flex="90" class="slick-container">
+				
+
+					<slick ng-if="images.length > 1" 
+						   infinite=true 
+						   slides-to-show=3 
+						   slides-to-scroll=2
+						   speed="1000"
+						   prev-arrow=".prev-button" 
+						   next-arrow=".next-button">
+				      
+					      <div class="slick-item" ng-repeat="s in images" ng-click="goToItem(s.id)">
+					        <img ng-src="{{ s.thumbnailUrl }}" />
+					        <div class="slick-item-name">{{s.name}}</div>
+					      </div>
+
+				    </slick>
+
+					<div class="prev-button">
+						<span class="fa fa-angle-left carousel-controls"></span>
+					</div>
+
+					<div class="next-button">
+						<span class="fa fa-angle-right carousel-controls"></span>
+					</div>
+
+			</div>
+		</div>
+
+		
+</div>

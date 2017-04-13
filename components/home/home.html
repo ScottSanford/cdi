@@ -1,0 +1,34 @@
+<main-nav-bar></main-nav-bar>
+
+<md-content flex="90" layout="column" class="home-top-text-container">
+	<!-- TEXT SECTION -->
+	<div flex="50" class="home-bkg" layout="row" layout-padding>
+		<div flex class="home-info-container">
+			<div class="home-info-title">Help patients experiencing neurodegeneration find answers.</div>
+			<div class="home-info-subtext">Our subspecialized radiologists can quantify brain atrophy and measure the impact</div>
+			<div class="home-info-subtext">of treatment for patients.</div>
+			<ul class="home-info-ul">
+				<li class="home-info-li" ng-repeat="b in bullets">{{b.text}}</li>
+			</ul>
+		</div>
+	</div>
+	<!-- IMAGE NAVIGATION -->
+	<md-content flex="50" class="home-navigation-container" layout="row" layout-wrap>
+		<div flex="50" flex-gt-md="25" layout="row" ng-click="goToSub(n.id)" ng-repeat="n in navs" layout-padding class="home-nav">
+
+			<div layout="column" layout-align="space-around center" class="home-nav-img-container" hover-bg-change default-bg="n.navStatic" hover-bg="n.navHover">
+				<div flex></div>
+			 	<div flex class="nav-item-name">{{n.name}}</div>
+			 	<div flex class="nav-item-icon"><span class="fa fa-angle-right"></span></div>
+			</div>
+
+		</div>
+	</md-content>
+	
+</md-content>
+
+
+
+<md-content flex class="home-footer" layout="row" layout-align="end center">
+	<span class="fa fa-times-circle-o fa-2x close-interactive-button" ng-click="closeInteractive()"></span>
+</md-content>

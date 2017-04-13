@@ -1,0 +1,30 @@
+{
+  "name": "pinnacle price lookup",
+  "main": "app.js",
+  "authors": [
+    "Scott Sanford <ssanford@mediafly.com>"
+  ],
+  "description": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-material": "^1.1.1",
+    "angular-material-icons": "^0.7.1",
+    "underscore": "^1.8.3",
+    "angular-ui-router": "^0.4.2",
+    "mfly-commands": "^1.13.1",
+    "font-awesome": "^4.7.0",
+    "animate.css": "^3.5.2",
+    "material-design-icons": "^3.0.1",
+    "angular-slick": "^0.2.1",
+    "slick-carousel": "^1.6.0"
+  }
+}

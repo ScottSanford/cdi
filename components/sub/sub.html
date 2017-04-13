@@ -1,0 +1,57 @@
+<sub-nav-bar></sub-nav-bar>
+
+<md-content layout="column" flex>
+	<nav layout="row" class="sub-nav-container">
+		<div flex="25" 
+		 	 layout="row" 
+		 	 layout-align="center center" 
+		 	 ng-repeat="n in navs" 
+		 	 class="sub-nav-item" 
+		 	 ng-class="{isItemActive: slug === n.id }"
+		 	 ng-click="goToSubFolder(n.id)">
+			<div class="sub-nav-item-text">{{n.name}}</div>
+		</div>
+	</nav>
+
+	<md-content flex layout="row" class="main-content-container">
+		<md-content flex style="background-image: url('{{item.bkgImg}}')" class="sub-background">
+			<div flex="45" class="sub-content-container">
+				<div class="item-name">{{item.name}}</div>
+				<div class="item-sub-one">Get quantitative measurements to assess patients with:</div>
+				<ul>
+					<li ng-repeat="i in item.listOne" class="item-sub-list">{{i.item}}</li>
+				</ul>
+
+				<!-- START: 2ND BULLET POINT LIST -->
+				<div class="item-sub-two">{{item.listTwoTitle}}</div>
+
+				<ul layout="column" layout-wrap ng-show="item.id !== '3575aa8e8dcc467594486ba95c6fe2aeproduct330824'">
+					<li flex ng-repeat="i in item.listTwo" class="item-sub-list">{{i.item}}</li>
+				</ul>
+
+				<ul layout="row" layout-wrap ng-show="item.id == '3575aa8e8dcc467594486ba95c6fe2aeproduct330824'">
+					<li flex="50" ng-repeat="i in item.listTwo" class="item-sub-list">{{i.item}}</li>
+				</ul>
+
+
+
+
+				<md-divider class="sub-content-divider"></md-divider>
+
+
+				<!-- START: RELATED CONTENT -->
+				<div class="related-content-title">Related Content</div>
+
+				<div layout="row" layout-wrap class="related-content-container">
+					<div flex="45" flex-gt-md="30" ng-repeat="item in items" ng-click="goToItem(item.id)" class="related-content-item" layout-margin>
+						<img ng-src="{{item.icon}}" class="related-content-icon">
+						<div class="related-content-name">{{ item.name }}</div>
+					</div>
+				</div>
+
+
+			</div>
+		</md-content>
+	</md-content>
+</md-content>
+
